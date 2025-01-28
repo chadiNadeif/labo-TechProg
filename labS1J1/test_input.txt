@@ -1,0 +1,7 @@
+Find the sub in this line and return it as a new String struct
+9,3
+sub
+racecar
+able was I ere I saw elba
+147,89,20,40,27,12
+12,20,27,40,89,147
