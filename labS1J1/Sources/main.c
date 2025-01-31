@@ -112,8 +112,8 @@ int test_code(FILE* f) {
 		else if (ligneCount <= 4) {
 			static size_t isGood = 0;
 			strcpy(lastLine, ligne);
-			size_t len = strlen(lastLine);
-			lastLine[strlen(lastLine) - 1] = '\0';
+			size_t len = strlen(lastLine)-1;
+			lastLine[len] = '\0';
 			set_String(lastLine, &str);
 			if (strcmp(str.characters, lastLine) == 0 && len == str.length) {
 				printf("Tu as bien programmer: set_String !\n");
