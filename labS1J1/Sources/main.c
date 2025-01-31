@@ -112,17 +112,21 @@ int test_code(FILE* f) {
 		else if (ligneCount <= 4) {
 			static size_t isGood = 0;
 			strcpy(lastLine, ligne);
+			size_t len = strlen(lastLine);
 			lastLine[strlen(lastLine) - 1] = '\0';
 			set_String(lastLine, &str);
-			if (isGood == 0 && strcmp(str.characters, lastLine) == 0) {
+			if (strcmp(str.characters, lastLine) == 0 && len == str.length) {
 				printf("Tu as bien programmer: set_String !\n");
 			}
 			else {
 				printf("Tu as un erreur dans: set_String !\n");
+				if (len != str.length) {
+					printf("[ERREUR]: Tu n'as pas la bonne length pour ton string\n");
+				}
 				result = 1;
 			}
-			isGood += String_is_palindrome(&str);
-			if (ligneCount == 4 && isGood > 1) {
+			isGood = String_is_palindrome(&str);
+			if (isGood == 1) {
 				printf("Tu as bien programmer: String_is_palindrome !\n");
 			}
 			else {
