@@ -169,8 +169,8 @@ int test_code(FILE* f) {
 			if (p->name != persons[i].name || p->age != persons[i].age) {
 				fprintf(stderr, "L'ordre dans la stack n'est pas bonne.\n");
 				out = -1;
-			}
 		}
+			}
 	}
 	else {
 		fprintf(stderr, "new_stack implementation fails to create the stack...\n");
